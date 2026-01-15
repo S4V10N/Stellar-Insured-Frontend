@@ -14,7 +14,7 @@ const HowItWorks = () => {
       icon: <Wallet className="h-8 w-8" />,
       title: "Sign Up & Connect Wallet",
       description:
-        "Create an account and connect your StarkNet-compatible wallet to get started.",
+        "Create an account and connect your StellarNet-compatible wallet to get started.",
     },
     {
       icon: <ShieldCheck className="h-8 w-8" />,

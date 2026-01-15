@@ -8,7 +8,7 @@ const CallToAction = () => {
           Ready to Secure Your Digital Assets?
         </h2>
         <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto leading-relaxed">
-          Join thousands of users who trust Stark Insured for transparent and reliable blockchain-based
+          Join thousands of users who trust Stellar Insured for transparent and reliable blockchain-based
           insurance coverage.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

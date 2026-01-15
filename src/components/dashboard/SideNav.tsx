@@ -13,7 +13,7 @@ export default function SideNav() {
       <div className="mb-8 flex justify-center items-center h-16">
         <Link href="/" className="flex items-center">
           <span className="text-xl font-bold text-white text-center">
-            Stark<span className="text-[#22BBF9]">Insured</span>
+            Stellar<span className="text-[#22BBF9]">Insured</span>
           </span>
         </Link>
       </div>

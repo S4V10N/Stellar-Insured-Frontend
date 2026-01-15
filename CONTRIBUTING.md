@@ -1,6 +1,6 @@
-🤝 Contributing to Stark Insured — Frontend
+🤝 Contributing to Stellar Insured — Frontend
 Welcome! 👋
-We’re excited that you’re interested in contributing to the Stark Insured frontend — the gateway to our next-gen decentralized insurance platform built on StarkNet.
+We’re excited that you’re interested in contributing to the Stellar Insured frontend — the gateway to our next-gen decentralized insurance platform built on StellarNet.
 
 Your work will help users interact with tamper-proof, transparent, and automated insurance services, all powered by smart contracts and DAO governance.
 
@@ -20,8 +20,8 @@ Commit Conventions
 🚀 Getting Started
 Fork the repository and clone your fork:
 
-git clone https://github.com/your-username/stark-insured-frontend.git
-cd stark-insured-frontend
+git clone https://github.com/your-username/Stellar-insured-frontend.git
+cd Stellar-insured-frontend
 Install dependencies:
 npm install
 
@@ -38,9 +38,9 @@ Styling: Tailwind CSS
 
 State Management: The project uses React's built-in state management hooks, specifically useContext
 
-Wallets & Blockchain: StarkNet.js
+Wallets & Blockchain: StellarNet.js
 
-Smart Contract Interaction: Cairo contracts via StarkNet Provider
+Smart Contract Interaction: Cairo contracts via StellarNet Provider
 
 API Layer: GraphQL / REST (depending on integration)
 
@@ -66,7 +66,7 @@ Use Tailwind CSS utility classes for styling.
 
 Use React Hooks and avoid class-based components.
 
-For blockchain interactions, use starknet-react hooks or services from /lib/starknet.
+For blockchain interactions, use Stellarnet-react hooks or services from /lib/Stellarnet.
 
 🔁 Pull Request Workflow
 Create a new branch:

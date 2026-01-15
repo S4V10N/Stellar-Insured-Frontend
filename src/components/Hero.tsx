@@ -54,7 +54,7 @@ const Hero = () => {
             <div className="max-w-2xl animate-fade-in">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
                 Decentralized Insurance for the{" "}
-                <span className="text-[#22BBF9]">StarkNet</span> Ecosystem
+                <span className="text-[#22BBF9]">StellarNet</span> Ecosystem
               </h1>
               <p className="text-lg md:text-xl text-gray-300 mb-8">
                 Secure your digital assets with transparent, automated, and
@@ -102,7 +102,7 @@ const Hero = () => {
                     >
                       <Image
                         src="/lovable-uploads/2ba584db-1b9c-4677-ac61-9460bd8c09e8.png"
-                        alt="Stark Coin"
+                        alt="Stellar Coin"
                         width={96}
                         height={96}
                         className="object-contain drop-shadow-[0_0_15px_rgba(34,187,249,0.3)]"
@@ -118,7 +118,7 @@ const Hero = () => {
                   <div className="absolute inset-0 flex items-center justify-center">
                     <Image
                       src="/lovable-uploads/2ba584db-1b9c-4677-ac61-9460bd8c09e8.png"
-                      alt="Stark Coins Collection"
+                      alt="Stellar Coins Collection"
                       width={600}
                       height={600}
                       className="w-full h-auto object-contain opacity-30"

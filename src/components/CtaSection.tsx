@@ -8,7 +8,7 @@ type Variant = "A" | "B";
 const CTA_VARIANTS = {
   A: {
     title: "Get Insured Now!",
-    description: "Protect your future with Stark Insurance.",
+    description: "Protect your future with Stellar Insurance.",
     button: "Get Started",
   },
   B: {

@@ -27,8 +27,8 @@ export default function SignInForm() {
         >
           <div className="absolute inset-0 border-2 border-blue-500 opacity-10 rounded-xl pointer-events-none"></div>
 
-          <h1 className="text-[32px] font-bold">Stark Insured</h1>
-          <p className="text-[24px] mt-1 font-semibold">Join Stark Insured</p>
+          <h1 className="text-[32px] font-bold">Stellar Insured</h1>
+          <p className="text-[24px] mt-1 font-semibold">Join Stellar Insured</p>
           <p className="text-lg text-[#A79E9E] mt-2">
             Create your account and start protecting your digital assets today
           </p>

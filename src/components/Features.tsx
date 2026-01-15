@@ -62,7 +62,7 @@ const Features: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            Stark Insured leverages blockchain technology to provide innovative
+            Stellar Insured leverages blockchain technology to provide innovative
             insurance solutions that are transparent, efficient, and
             user-centric.
           </motion.p>

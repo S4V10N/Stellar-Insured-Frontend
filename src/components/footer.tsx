@@ -33,11 +33,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center mb-4">
-              <span className="text-2xl font-bold text-blue-400">Stark</span>
+              <span className="text-2xl font-bold text-blue-400">Stellar</span>
               <span className="text-2xl font-bold text-white">Insured</span>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed mb-6">
-              A decentralized insurance platform built on the StarkNet ecosystem. 
+              A decentralized insurance platform built on the StellarNet ecosystem. 
               Providing transparent and automated insurance solutions.
             </p>
             <div className="flex space-x-4">
@@ -100,7 +100,7 @@ const Footer = () => {
         <div className="border-t border-gray-700 mt-12 pt-8">
           <div className="text-center">
             <p className="text-gray-400 text-sm">
-              © 2025 Stark Insured. All rights reserved.
+              © 2025 Stellar Insured. All rights reserved.
             </p>
           </div>
         </div>

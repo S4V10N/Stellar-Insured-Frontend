@@ -26,7 +26,7 @@ export default function SignInForm() {
         >
           <div className="absolute inset-0 border-2 border-blue-500 opacity-10 rounded-xl pointer-events-none"></div>
 
-          <h1 className="text-[32px] font-bold">Stark Insured</h1>
+          <h1 className="text-[32px] font-bold">Stellar Insured</h1>
           <p className="text-[30px] mt-1 font-bold">Welcome Back</p>
           <p className="text-lg text-[#A79E9E] mt-2 font-bold">
             Sign in to secure your digital assets

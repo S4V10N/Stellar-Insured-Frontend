@@ -38,7 +38,7 @@ export default function MobileNav() {
       {/* Top Bar */}
       <div className="md:hidden fixed top-0 left-0 right-0 bg-darkBlue z-50 h-16 flex items-center justify-between px-4 border-b border-white/10">
         <Link href="/" className="text-xl font-bold text-white">
-          Stark<span className="text-[#22BBF9]">Insured</span>
+          Stellar<span className="text-[#22BBF9]">Insured</span>
         </Link>
         <button onClick={() => setOpen(true)}>
           <Menu className="text-white w-6 h-6" />
@@ -68,7 +68,7 @@ export default function MobileNav() {
             >
               <div className="flex items-center justify-between mb-8 h-16 px-1">
                 <Link href="/" className="text-xl font-bold text-white">
-                  Stark<span className="text-[#22BBF9]">Insured</span>
+                  Stellar<span className="text-[#22BBF9]">Insured</span>
                 </Link>
                 <button onClick={() => setOpen(false)}>
                   <X className="text-white w-6 h-6" />
