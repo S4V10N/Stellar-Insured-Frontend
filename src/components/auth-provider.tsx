@@ -9,12 +9,18 @@ export type AuthSession = {
   authenticatedAt: number;
 };
 
+export type RegisteredUser = {
+  createdAt: number;
+  email?: string;
+};
+
 type AuthContextValue = {
   session: AuthSession | null;
   setSession: (session: AuthSession | null) => void;
   signOut: () => void;
   isAddressRegistered: (address: string) => boolean;
-  registerAddress: (address: string) => void;
+  registerAddress: (address: string, user?: RegisteredUser) => void;
+  getRegisteredUser: (address: string) => RegisteredUser | null;
 };
 
 const SESSION_KEY = "stellar_insured_session";
@@ -31,13 +37,42 @@ function safeParseJson<T>(value: string | null): T | null {
   }
 }
 
-function readRegisteredUsers(): string[] {
-  if (typeof window === "undefined") return [];
-  const parsed = safeParseJson<string[]>(window.localStorage.getItem(USERS_KEY));
-  return Array.isArray(parsed) ? parsed : [];
+function normalizeUsers(value: unknown): Record<string, RegisteredUser> {
+  if (!value) return {};
+  if (Array.isArray(value)) {
+    return value.reduce<Record<string, RegisteredUser>>((acc, address) => {
+      if (typeof address === "string") acc[address] = { createdAt: Date.now() };
+      return acc;
+    }, {});
+  }
+
+  if (typeof value === "object") {
+    const obj = value as Record<string, unknown>;
+    return Object.entries(obj).reduce<Record<string, RegisteredUser>>((acc, [k, v]) => {
+      if (typeof k !== "string") return acc;
+      if (typeof v === "object" && v) {
+        const vv = v as Partial<RegisteredUser>;
+        acc[k] = {
+          createdAt: typeof vv.createdAt === "number" ? vv.createdAt : Date.now(),
+          email: typeof vv.email === "string" ? vv.email : undefined,
+        };
+      } else {
+        acc[k] = { createdAt: Date.now() };
+      }
+      return acc;
+    }, {});
+  }
+
+  return {};
 }
 
-function writeRegisteredUsers(users: string[]): void {
+function readRegisteredUsers(): Record<string, RegisteredUser> {
+  if (typeof window === "undefined") return {};
+  const parsed = safeParseJson<unknown>(window.localStorage.getItem(USERS_KEY));
+  return normalizeUsers(parsed);
+}
+
+function writeRegisteredUsers(users: Record<string, RegisteredUser>): void {
   if (typeof window === "undefined") return;
   window.localStorage.setItem(USERS_KEY, JSON.stringify(users));
 }
@@ -70,18 +105,33 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const isAddressRegistered = useCallback((address: string) => {
     const users = readRegisteredUsers();
-    return users.includes(address);
+    return Boolean(users[address]);
   }, []);
 
-  const registerAddress = useCallback((address: string) => {
+  const getRegisteredUser = useCallback((address: string) => {
     const users = readRegisteredUsers();
-    if (users.includes(address)) return;
-    writeRegisteredUsers([...users, address]);
+    return users[address] ?? null;
+  }, []);
+
+  const registerAddress = useCallback((address: string, user?: RegisteredUser) => {
+    const users = readRegisteredUsers();
+    if (users[address]) return;
+    writeRegisteredUsers({
+      ...users,
+      [address]: user ?? { createdAt: Date.now() },
+    });
   }, []);
 
   const value = useMemo<AuthContextValue>(
-    () => ({ session, setSession, signOut, isAddressRegistered, registerAddress }),
-    [session, setSession, signOut, isAddressRegistered, registerAddress],
+    () => ({
+      session,
+      setSession,
+      signOut,
+      isAddressRegistered,
+      registerAddress,
+      getRegisteredUser,
+    }),
+    [session, setSession, signOut, isAddressRegistered, registerAddress, getRegisteredUser],
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
