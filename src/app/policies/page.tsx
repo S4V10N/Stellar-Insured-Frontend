@@ -3,7 +3,7 @@
 import React, { useMemo, useState } from "react";
 import { PolicyCard } from "@/components/policies/PolicyCard";
 import { mockPolicies } from "@/data/mockPolicies";
-import { Search, Plus, Filter } from "lucide-react";
+import { Search, Plus } from "lucide-react";
 import { Pagination } from "@/components/Pagination";
 import { FilterDropdown } from "@/components/FilterDropdown";
 
