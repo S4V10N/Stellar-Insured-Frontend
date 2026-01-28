@@ -1,37 +1,52 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef } from "react";
 
-interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
-    label: string;
-    error?: string;
-    helperText?: string;
+type TextareaState = "default" | "success" | "error";
+
+interface TextareaProps
+  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+  label: string;
+  error?: string;
+  helperText?: string;
+  state?: TextareaState;
 }
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
-    ({ label, error, helperText, className = '', ...props }, ref) => {
-        return (
-            <div className="w-full">
-                <label className="mb-2 block text-sm font-medium text-slate-300">
-                    {label}
-                </label>
-                <textarea
-                    ref={ref}
-                    className={`
-            w-full rounded-lg bg-slate-900/50 border-2 px-4 py-3 text-white placeholder-slate-500 transition-colors
-            focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500
-            disabled:opacity-50 disabled:cursor-not-allowed min-h-[120px]
-            ${error ? 'border-rose-500 focus:border-rose-500 focus:ring-rose-500' : 'border-slate-800 hover:border-slate-700'}
-            ${className}
-          `}
-                    {...props}
-                />
-                {(error || helperText) && (
-                    <p className={`mt-1 text-sm ${error ? 'text-rose-400' : 'text-slate-400'}`}>
-                        {error || helperText}
-                    </p>
-                )}
-            </div>
-        );
-    }
+  (
+    { label, error, helperText, state = "default", className = "", ...props },
+    ref,
+  ) => {
+    const hasError = state === "error" || !!error;
+    const isSuccess = state === "success" && !hasError;
+
+    const borderState = hasError
+      ? "border-rose-500 focus:border-rose-500 focus:ring-rose-500"
+      : isSuccess
+        ? "border-emerald-500/80 focus:border-emerald-500 focus:ring-emerald-500"
+        : "border-slate-800 hover:border-slate-700 focus:border-cyan-500 focus:ring-cyan-500";
+
+    return (
+      <div className="w-full">
+        <label className="mb-2 block text-sm font-medium text-slate-300">
+          {label}
+        </label>
+        <textarea
+          ref={ref}
+          className={`w-full rounded-lg bg-slate-900/50 border-2 px-4 py-3 text-white placeholder-slate-500 transition-colors focus:outline-none focus:ring-1 disabled:opacity-50 disabled:cursor-not-allowed min-h-[120px] ${borderState} ${className}`}
+          aria-invalid={hasError}
+          {...props}
+        />
+        {(error || helperText) && (
+          <p
+            className={`mt-1 text-sm ${
+              hasError ? "text-rose-400" : "text-slate-400"
+            }`}
+          >
+            {error || helperText}
+          </p>
+        )}
+      </div>
+    );
+  },
 );
 
-Textarea.displayName = 'Textarea';
+Textarea.displayName = "Textarea";
