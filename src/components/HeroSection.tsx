@@ -7,21 +7,21 @@ export default function HeroSection() {
         <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
           {/* Left Content */}
           <div className="z-10 space-y-6 text-center lg:text-left">
-            <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl xl:text-6xl">
+            <h1 className="text-3xl font-bold leading-tight text-text-primary dark:text-white sm:text-4xl lg:text-5xl xl:text-6xl">
               Decentralized Insurance for the{" "}
-              <span className="text-[#00D4FF]">StellarNet</span> Ecosystem
+              <span className="text-brand-primary">StellarNet</span> Ecosystem
             </h1>
 
-            <p className="text-base text-gray-300 sm:text-lg lg:text-xl lg:max-w-xl mx-auto lg:mx-0">
+            <p className="text-base text-text-secondary dark:text-gray-300 sm:text-lg lg:text-xl lg:max-w-xl mx-auto lg:mx-0">
               Secure your digital assets with transparent, automated, and
               tamper-proof insurance policies powered by blockchain technology.
             </p>
 
             <div className="flex flex-col gap-3 sm:flex-row sm:gap-4 sm:justify-center lg:justify-start">
-              <button className="rounded-lg bg-[#00D4FF] px-6 py-3 text-sm font-semibold text-[#0A0E27] transition-all hover:bg-[#00BFEA] sm:px-8 sm:py-3.5 sm:text-base">
+              <button className="rounded-lg bg-brand-primary px-6 py-3 text-sm font-semibold text-black transition-all hover:bg-brand-hover sm:px-8 sm:py-3.5 sm:text-base">
                 Get Started
               </button>
-              <button className="rounded-lg border-2 border-white bg-white px-6 py-3 text-sm font-semibold text-[#00D4FF] transition-all hover:bg-white/90 sm:px-8 sm:py-3.5 sm:text-base">
+              <button className="rounded-lg border-2 border-slate-800 dark:border-white bg-white dark:bg-transparent px-6 py-3 text-sm font-semibold text-slate-800 dark:text-white transition-all hover:bg-slate-100 dark:hover:bg-slate-800 sm:px-8 sm:py-3.5 sm:text-base">
                 Learn More
               </button>
             </div>
