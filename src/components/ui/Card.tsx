@@ -15,14 +15,14 @@ export const Card: React.FC<CardProps> = ({
   ...props
 }) => {
   const base =
-    "rounded-2xl bg-brand-card border border-brand-border/60 text-white shadow-lg shadow-black/40";
+    "rounded-2xl bg-bg-card border border-border/60 text-text-primary shadow-lg dark:shadow-black/40";
 
   const variants: Record<CardVariant, string> = {
     default: "",
     elevated:
-      "border-brand-border/80 shadow-xl shadow-cyan-500/10 bg-slate-900/80",
+      "border-border/80 shadow-xl shadow-cyan-500/10 bg-slate-900/80 dark:bg-slate-900/80",
     outline:
-      "bg-transparent border-dashed border-brand-border/70 shadow-none backdrop-blur-sm",
+      "bg-transparent border-dashed border-border/70 shadow-none backdrop-blur-sm",
   };
 
   const interactiveClasses = interactive
@@ -38,4 +38,3 @@ export const Card: React.FC<CardProps> = ({
     </div>
   );
 };
-
