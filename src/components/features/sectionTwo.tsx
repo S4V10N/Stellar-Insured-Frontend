@@ -4,7 +4,7 @@ function sectionTwo() {
     return (
         <section className="bg-[#1A1F35]">
             <div className="p-4 grid gap-x-7 gap-y-8 justify-center lg:grid-cols-2">
-                <div className="px-5.25 py-12 border border-[#2c2c2c] rounded-[1.25rem] section__two__card max-w-[39.093rem] md:h-60.25 flex flex-col justify-center ">
+                <article className="px-5.25 py-12 border border-[#2c2c2c] rounded-[1.25rem] section__two__card max-w-[39.093rem] md:h-60.25 flex flex-col justify-center ">
                     <h3 className="text-left font-bold text-2xl mb-5 md:text-4xl ">
                         Decentralized{" "}
                         <span className="text-[#00D4FF]">Risk</span> Pools
@@ -15,9 +15,9 @@ function sectionTwo() {
                         across the network. Payouts and pool management are
                         governed transparently by the community.
                     </p>
-                </div>
+                </article>
 
-                <div className="px-5.25 py-12 border border-[#2c2c2c] rounded-[1.25rem] section__two__card max-w-[39.093rem] md:h-60.25 flex flex-col justify-center ">
+                <article className="px-5.25 py-12 border border-[#2c2c2c] rounded-[1.25rem] section__two__card max-w-[39.093rem] md:h-60.25 flex flex-col justify-center ">
                     <h3 className="text-left font-bold text-2xl mb-5 md:text-4xl ">
                         Full{" "}
                         <span className="text-[#00D4FF]">Transparency</span> &
@@ -29,9 +29,9 @@ function sectionTwo() {
                         Stellar blockchain, creating an immutable audit trail
                         that prevents fraud and increases trust.
                     </p>
-                </div>
+                </article>
 
-                <div className="px-5.25 py-12 border border-[#2c2c2c] rounded-[1.25rem] section__two__card max-w-[39.093rem] md:h-60.25 flex flex-col justify-center ">
+                <article className="px-5.25 py-12 border border-[#2c2c2c] rounded-[1.25rem] section__two__card max-w-[39.093rem] md:h-60.25 flex flex-col justify-center ">
                     <h3 className="text-left font-bold text-2xl mb-5 md:text-4xl ">
                         Multi-Asset &{" "}
                         <span className="text-[#00D4FF]">Multi-Use</span>{" "}
@@ -43,9 +43,9 @@ function sectionTwo() {
                         property and crypto—using a single decentralized
                         insurance platform.
                     </p>
-                </div>
+                </article>
 
-                <div className="px-5.25 py-12 border border-[#2c2c2c] rounded-[1.25rem] section__two__card max-w-[39.093rem] md:h-60.25 flex flex-col justify-center ">
+                <article className="px-5.25 py-12 border border-[#2c2c2c] rounded-[1.25rem] section__two__card max-w-[39.093rem] md:h-60.25 flex flex-col justify-center ">
                     <h3 className="text-left font-bold text-2xl mb-5 md:text-4xl ">
                         <span className="text-[#00D4FF]">DAO</span> Governance
                     </h3>
@@ -55,7 +55,7 @@ function sectionTwo() {
                         proposals and voting on key decisions through a
                         decentralized autonomous organization (DAO).
                     </p>
-                </div>
+                </article>
             </div>
         </section>
     );
