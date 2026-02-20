@@ -59,8 +59,6 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
 
   // Initialize theme on mount
   useEffect(() => {
-    setMounted(true);
-
     // Get stored preference or use system
     let storedTheme: Theme | null = null;
     try {
@@ -73,6 +71,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
     setThemeState(initialTheme);
     const resolved = applyTheme(initialTheme);
     setResolvedTheme(resolved);
+    setMounted(true);
 
     // Listen for system theme changes
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
@@ -111,13 +110,17 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
     setTheme(newTheme);
   }, [resolvedTheme, setTheme]);
 
-  // Provide context even before mounting to avoid hydration errors
-  const value: ThemeContextType = mounted
-    ? { theme, resolvedTheme, setTheme, toggleTheme }
-    : { theme: "system", resolvedTheme: "light", setTheme, toggleTheme };
+  const value: ThemeContextType = {
+    theme,
+    resolvedTheme,
+    setTheme,
+    toggleTheme,
+  };
 
   return (
-    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+    <ThemeContext.Provider value={value}>
+      {mounted ? children : <div style={{ visibility: 'hidden' }}>{children}</div>}
+    </ThemeContext.Provider>
   );
 }
 

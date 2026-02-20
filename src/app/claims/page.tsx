@@ -9,7 +9,7 @@ import { Pagination } from "@/components/Pagination";
 import { FilterDropdown } from "@/components/FilterDropdown";
 import { Search, Plus } from "lucide-react";
 import { ProtectedRoute } from "@/components/protected-route";
-import { useAuth } from "@/components/auth-provider";
+import { useAuth } from "@/components/auth-provider-enhanced";
 import { connectFreighter, createAuthMessage, signFreighterMessage } from "@/lib/freighter";
 
 const CLAIM_STATUSES = [

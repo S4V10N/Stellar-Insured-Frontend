@@ -1,6 +1,6 @@
 "use client";
 
-import { useAuth } from "@/components/auth-provider";
+import { useAuth } from "@/components/auth-provider-enhanced";
 import { Card } from "@/components/ui/Card";
 
 export function AuthStatusIndicator() {
