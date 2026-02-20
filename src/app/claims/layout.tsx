@@ -2,7 +2,7 @@
 
 import { Sidebar } from "@/components/ui/Sidebar";
 import { Button } from "@/components/ui/Button";
-import { useAuth } from "@/components/auth-provider";
+import { useAuth } from "@/components/auth-provider-enhanced";
 import { connectFreighter, createAuthMessage, signFreighterMessage } from "@/lib/freighter";
 import { useState } from "react";
 

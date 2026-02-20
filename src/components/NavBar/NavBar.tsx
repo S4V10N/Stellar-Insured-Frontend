@@ -1,7 +1,7 @@
 'use client';
 import logo from '@/components/logo.png'
 import Link from 'next/link';
-import { useAuth } from '../auth-provider';
+import { useAuth } from '../auth-provider-enhanced';
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
