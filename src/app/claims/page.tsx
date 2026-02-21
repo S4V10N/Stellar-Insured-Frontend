@@ -1,15 +1,23 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { mockClaims } from "@/data/mockData";
-import { Pagination } from "@/components/Pagination";
-import { FilterDropdown } from "@/components/FilterDropdown";
 import { Search, Plus } from "lucide-react";
 import { ProtectedRoute } from "@/components/protected-route";
 import { useAuth } from "@/components/auth-provider-enhanced";
+
+const FilterDropdown = dynamic(() => import("@/components/FilterDropdown").then(mod => mod.FilterDropdown), {
+  loading: () => <div className="w-full md:w-48 h-10 bg-slate-800 rounded-lg animate-pulse" />,
+  ssr: true
+});
+
+const Pagination = dynamic(() => import("@/components/Pagination").then(mod => mod.Pagination), {
+  ssr: true
+});
 import { connectFreighter, createAuthMessage, signFreighterMessage } from "@/lib/freighter";
 import { useAnalytics } from "@/hooks/useAnalytics";
 
@@ -111,6 +119,7 @@ export default function ClaimsPage() {
                   <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
                   <span>Connected: {session.address.slice(0, 6)}...{session.address.slice(-4)}</span>
                 </div>
+              ) : mv>
               ) : (
                 <Button
                   variant="primary"
